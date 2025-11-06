@@ -66,7 +66,7 @@ export default function Page() {
                 href={`/card/${place.slug}`}
                 className="hover:bg-gray-50 transition-colors w-full md:w-[300px] h-[300px] items-stretch"
               >
-                <div className="relative w-full h-full flex-shrink-0 overflow-clip rounded-lg group">
+                <div className="relative w-full h-full shrink-0 overflow-clip rounded-lg group">
                   <ViewTransition name={`place-image-${place.slug}`}>
                     <Image
                       loading="eager"

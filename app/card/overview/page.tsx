@@ -46,7 +46,7 @@ export default function Page() {
                 className="flex gap-4 p-2 transition-colors"
               >
                 <ViewTransition name={`place-image-${place.slug}`}>
-                  <div className="relative w-30 h-30 overflow-hidden rounded-lg flex-shrink-0">
+                  <div className="relative w-30 h-30 overflow-hidden rounded-lg shrink-0">
                     <Image
                       loading="eager"
                       decoding="sync"
