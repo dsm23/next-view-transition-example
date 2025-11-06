@@ -1,0 +1,33 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "group:jsUnitTest",
+    "group:vite",
+    "helpers:pinGitHubActionDigestsToSemver",
+    "security:minimumReleaseAgeNpm",
+    "security:openssf-scorecard",
+    ":approveMajorUpdates",
+    ":enableVulnerabilityAlerts",
+    ":pinAllExceptPeerDependencies"
+  ],
+  "packageRules": [
+    {
+      "extends": ["packages:eslint"],
+      "groupName": "eslint packages"
+    },
+    {
+      "extends": ["packages:react"],
+      "groupName": "react packages"
+    },
+    {
+      "groupName": "nextjs monorepo",
+      "matchPackageNames": ["@next/**", "eslint-plugin-next", "next"]
+    }
+  ],
+  "patch": {
+    "rebaseWhen": "behind-base-branch"
+  },
+  "rebaseWhen": "conflicted",
+  "osvVulnerabilityAlerts": true
+}
